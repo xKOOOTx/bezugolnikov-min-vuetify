@@ -1,32 +1,48 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+  <v-app>
+    <Nav/>
+    <v-main class="blue-grey darken-4">
+      <router-view/>
+    </v-main>
+    <v-footer class="blue-grey darken-4 white--text d-flex justify-start pl-16">
+      <p class="footer_p pl-2">2021&copy; Gusev Alex</p>
+    </v-footer>
+  </v-app>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<script>
+import Nav from '@/components/Nav'
+
+export default {
+  name: 'App',
+
+  components: {
+    Nav
+  },
+
+  data: () => ({
+    //
+  })
 }
+</script>
 
-#nav {
-  padding: 30px;
+<style lang="scss">
+@import "src/assets/style/style";
+@import "src/assets/style/variables";
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+.link {
+  outline: 1px solid $white;
+  border-radius: 3px;
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+  padding: 20px;
+
+  &:hover {
+    color: orangered;
   }
 }
+
+.footer_p {
+  font-size: .6rem;
+}
+
 </style>
