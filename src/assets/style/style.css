@@ -1,0 +1,13 @@
+body {
+  font-family: sans-serif;
+}
+body a {
+  text-decoration: none;
+}
+
+.center {
+  padding-left: calc(50% - 700px);
+  padding-right: calc(50% - 700px);
+}
+
+/*# sourceMappingURL=style.css.map */
