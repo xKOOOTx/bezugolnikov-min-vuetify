@@ -1,163 +1,134 @@
 <template>
-  <v-container class="mt-6">
-    <v-row class="h1_wrapper">
-      <v-col class="col-12">
-        <h1 class="text-uppercase">Studio</h1>
-      </v-col>
-    </v-row>
-    <v-row>
-      <v-col
-        class="d-block col-md-4 col-sm-6 col-xs-12 col-12"
-        v-for="(image, idx) in imagesIndex"
-        :key="idx">
-        <div class="imgWrapper">
-          <v-img
-            min-height="310px"
-            class="customImg grey darken-4 rounded-lg border_all transform(scale1.1)"
-            :alt="image.alt"
-            :src="image.path"
-          />
-        </div>
-      </v-col>
-    </v-row>
-    <v-row>
-      <v-col
-        class="d-block col-md-4 col-sm-6 col-xs-12 col-12"
-        v-for="(image, idx) in imagesIndex"
-        :key="idx">
-        <div class="imgWrapper">
-          <v-img
-            min-height="310px"
-            class="customImg grey darken-4 rounded-lg border_all transform(scale1.1)"
-            :alt="image.alt"
-            :src="image.path"
-          />
-        </div>
-      </v-col>
-    </v-row>
-    <v-row>
-      <v-col
-        class="d-block col-md-4 col-sm-6 col-xs-12 col-12"
-        v-for="(image, idx) in imagesIndex"
-        :key="idx">
-        <div class="imgWrapper">
-          <v-img
-            min-height="310px"
-            class="customImg grey darken-4 rounded-lg border_all transform(scale1.1)"
-            :alt="image.alt"
-            :src="image.path"
-          />
-        </div>
-      </v-col>
-    </v-row>
-    <v-row>
-      <v-col
-        class="d-block col-md-4 col-sm-6 col-xs-12 col-12"
-        v-for="(image, idx) in imagesIndex"
-        :key="idx">
-        <div class="imgWrapper">
-          <v-img
-            min-height="310px"
-            class="customImg grey darken-4 rounded-lg border_all transform(scale1.1)"
-            :alt="image.alt"
-            :src="image.path"
-          />
-        </div>
-      </v-col>
-    </v-row>
-    <v-row>
-      <v-col
-        class="d-block col-md-4 col-sm-6 col-xs-12 col-12"
-        v-for="(image, idx) in imagesIndex"
-        :key="idx">
-        <div class="imgWrapper">
-          <v-img
-            min-height="310px"
-            class="customImg grey darken-4 rounded-lg border_all transform(scale1.1)"
-            :alt="image.alt"
-            :src="image.path"
-          />
-        </div>
-      </v-col>
-    </v-row>
-    <v-row>
-      <v-col
-        class="d-block col-md-4 col-sm-6 col-xs-12 col-12"
-        v-for="(image, idx) in imagesIndex"
-        :key="idx">
-        <div class="imgWrapper">
-          <v-img
-            min-height="310px"
-            class="customImg grey darken-4 rounded-lg border_all transform(scale1.1)"
-            :alt="image.alt"
-            :src="image.path"
-          />
-        </div>
-      </v-col>
-    </v-row>
+  <v-container>
+    <masonry
+      :gutter="{ default: '15px', 700: '10px' }"
+      :cols="{ default: 4, 1000: 3, 700: 2, 500: 1 }"
+    >
+      <CoolLightBox
+        :items="imagesStudio"
+        :index="index"
+        :useZoomBar="true"
+        @close="index = null">
+      </CoolLightBox>
+      <v-card
+        v-for="(image, id) in imagesStudio"
+        :key="image.id"
+        class="my-2"
+        color="blue-grey darken-4"
+      >
+        <v-img
+          @click="index = id"
+          :src="image"
+        >
+          <template v-slot:placeholder>
+            <v-row
+              class="fill-height ma-0"
+              align="center"
+              justify="center"
+            >
+              <v-progress-circular
+                indeterminate
+                color="grey lighten-5"
+              ></v-progress-circular>
+            </v-row>
+          </template>
+        </v-img>
+      </v-card>
+    </masonry>
   </v-container>
 </template>
 
 <script>
+import Vue from 'vue'
+import CoolLightBox from 'vue-cool-lightbox'
+import VueMasonry from 'vue-masonry-css'
+import 'vue-cool-lightbox/dist/vue-cool-lightbox.min.css'
+Vue.use(VueMasonry)
+
 export default {
+
   name: 'Studio',
+  components: {
+    CoolLightBox
+  },
   data () {
     return {
-      imagesIndex: [
-        {
-          name: 'club',
-          alt: 'club_photo',
-          path: require('../assets/images/index/club.jpg')
-        },
-        {
-          name: 'event',
-          alt: 'event_photo',
-          path: require('../assets/images/index/event.jpg')
-        },
-        {
-          name: 'food',
-          alt: 'food_photo',
-          path: require('../assets/images/index/food.jpg')
-        },
-        {
-          name: 'official',
-          alt: 'official_photo',
-          path: require('../assets/images/index/official.jpg')
-        },
-        {
-          name: 'studio',
-          alt: 'studio_photo',
-          path: require('../assets/images/index/studio.jpg')
-        },
-        {
-          name: 'wedding',
-          alt: 'wedding_photo',
-          path: require('../assets/images/index/wedding.jpg')
-        }
-      ]
+      // imagesStudio: [
+      //   {
+      //     name: 'actorName',
+      //     alt: 'studio_name_photo',
+      //     path: require('../assets/images/studio_img/studio1.jpg')
+      //   },
+      //   {
+      //     name: 'actorName',
+      //     alt: 'studio_name_photo',
+      //     path: require('../assets/images/studio_img/studio2.jpg')
+      //   },
+      //   {
+      //     name: 'actorName',
+      //     alt: 'studio_name_photo',
+      //     path: require('../assets/images/studio_img/studio3.jpg')
+      //   },
+      //   {
+      //     name: 'actorName',
+      //     alt: 'studio_name_photo',
+      //     path: require('../assets/images/studio_img/studio4.jpg')
+      //   },
+      //   {
+      //     name: 'actorName',
+      //     alt: 'studio_name_photo',
+      //     path: require('../assets/images/studio_img/studio5.jpg')
+      //   },
+      //   {
+      //     name: 'actorName',
+      //     alt: 'studio_name_photo',
+      //     path: require('../assets/images/studio_img/studio6.jpg')
+      //   },
+      //   {
+      //     name: 'actorName',
+      //     alt: 'studio_name_photo',
+      //     path: require('../assets/images/studio_img/studio7.jpg')
+      //   },
+      //   {
+      //     name: 'actorName',
+      //     alt: 'studio_name_photo',
+      //     path: require('../assets/images/studio_img/studio8.jpg')
+      //   },
+      //   {
+      //     name: 'actorName',
+      //     alt: 'studio_name_photo',
+      //     path: require('../assets/images/studio_img/studio9.jpg')
+      //   },
+      //   {
+      //     name: 'actorName',
+      //     alt: 'studio_name_photo',
+      //     path: require('../assets/images/studio_img/studio10.jpg')
+      //   },
+      //   {
+      //     name: 'actorName',
+      //     alt: 'studio_name_photo',
+      //     path: require('../assets/images/studio_img/studio11.jpg')
+      //   }
+      // ],
+      imagesStudio: [
+        require('../assets/images/studio_img/studio1.jpg'),
+        require('../assets/images/studio_img/studio2.jpg'),
+        require('../assets/images/studio_img/studio3.jpg'),
+        require('../assets/images/studio_img/studio4.jpg'),
+        require('../assets/images/studio_img/studio5.jpg'),
+        require('../assets/images/studio_img/studio6.jpg'),
+        require('../assets/images/studio_img/studio7.jpg'),
+        require('../assets/images/studio_img/studio8.jpg'),
+        require('../assets/images/studio_img/studio9.jpg'),
+        require('../assets/images/studio_img/studio10.jpg'),
+        require('../assets/images/studio_img/studio11.jpg')
+      ],
+      index: null
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-.imgWrapper {
-  display: block;
-  height: 310px;
-}
-.h1_wrapper {
-  text-align: center;
-  color: #FF6D00;
-}
-.imgWrapper {
-  display: block;
-  height: 310px;
-}
-.customImg {
-  display: block;
-  transition: .2s all linear;
-  &:hover {
-    transform: scale(1.1);
-  }
-}
+
 </style>

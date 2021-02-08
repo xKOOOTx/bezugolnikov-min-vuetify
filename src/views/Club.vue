@@ -1,103 +1,84 @@
 <template>
-  <v-container class="mt-6">
-    <v-row class="h1_wrapper">
-      <v-col class="col-12">
-        <h1 class="text-uppercase">club</h1>
-      </v-col>
-    </v-row>
-    <v-row>
-      <v-col
-        class="d-block col-md-4 col-sm-6 col-xs-12 col-12"
-        v-for="(image, idx) in imagesIndex"
-        :key="idx">
-        <div class="imgWrapper">
-          <v-img
-            min-height="310px"
-            class="customImg grey darken-4 rounded-lg border_all transform(scale1.1)"
-            :alt="image.alt"
-            :src="image.path"
-          />
-        </div>
-      </v-col>
-    </v-row>
-    <v-row>
-      <v-col
-        class="d-block col-md-4 col-sm-6 col-xs-12 col-12"
-        v-for="(image, idx) in imagesIndex"
-        :key="idx">
-        <div class="imgWrapper">
-          <v-img
-            min-height="310px"
-            class="customImg grey darken-4 rounded-lg border_all transform(scale1.1)"
-            :alt="image.alt"
-            :src="image.path"
-          />
-        </div>
-      </v-col>
-    </v-row>
+  <v-container>
+    <masonry
+      :gutter="{ default: '15px', 700: '10px' }"
+      :cols="{ default: 4, 1000: 3, 700: 2, 500: 1 }"
+    >
+      <CoolLightBox
+        :items="imagesClub"
+        :index="index"
+        :useZoomBar="true"
+        @close="index = null">
+      </CoolLightBox>
+      <v-card
+        v-for="(image, id) in imagesClub"
+        :key="image.id"
+        class="customImage mt-2 mb-2"
+        color="blue-grey darken-4 customImage"
+      >
+        <v-img
+          @click="index = id"
+          :src="image"
+          class="customImage"
+        >
+          <template v-slot:placeholder
+                    class="customImage"
+          >
+            <v-row
+              class="fill-height ma-0 customImage"
+              align="center"
+              justify="center"
+            >
+              <v-progress-circular
+                indeterminate
+                color="grey lighten-5"
+              ></v-progress-circular>
+            </v-row>
+          </template>
+        </v-img>
+      </v-card>
+    </masonry>
   </v-container>
 </template>
 
 <script>
+import Vue from 'vue'
+import CoolLightBox from 'vue-cool-lightbox'
+import VueMasonry from 'vue-masonry-css'
+import 'vue-cool-lightbox/dist/vue-cool-lightbox.min.css'
+Vue.use(VueMasonry)
+
 export default {
+
   name: 'Club',
+  components: {
+    CoolLightBox
+  },
   data () {
     return {
-      imagesIndex: [
-        {
-          name: 'club',
-          alt: 'club_photo',
-          path: require('../assets/images/index/club.jpg')
-        },
-        {
-          name: 'event',
-          alt: 'event_photo',
-          path: require('../assets/images/index/event.jpg')
-        },
-        {
-          name: 'food',
-          alt: 'food_photo',
-          path: require('../assets/images/index/food.jpg')
-        },
-        {
-          name: 'official',
-          alt: 'official_photo',
-          path: require('../assets/images/index/official.jpg')
-        },
-        {
-          name: 'studio',
-          alt: 'studio_photo',
-          path: require('../assets/images/index/studio.jpg')
-        },
-        {
-          name: 'wedding',
-          alt: 'wedding_photo',
-          path: require('../assets/images/index/wedding.jpg')
-        }
-      ]
+      imagesClub: [
+        require('../assets/images/club_img/club1.jpg'),
+        require('../assets/images/club_img/club2.jpg'),
+        require('../assets/images/club_img/club3.jpg'),
+        require('../assets/images/club_img/club4.jpg'),
+        require('../assets/images/club_img/club5.jpg'),
+        require('../assets/images/club_img/club6.jpg'),
+        require('../assets/images/club_img/club7.jpg'),
+        require('../assets/images/club_img/club8.jpg'),
+        require('../assets/images/club_img/club9.jpg'),
+        require('../assets/images/club_img/club10.jpg')
+      ],
+      index: null
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-.imgWrapper {
-  display: block;
-  height: 310px;
-}
-.h1_wrapper {
-  text-align: center;
-  color: #FF6D00;
-}
-.imgWrapper {
-  display: block;
-  height: 310px;
-}
-.customImg {
-  display: block;
-  transition: .2s all linear;
+.customImage {
+  cursor: pointer;
   &:hover {
-    transform: scale(1.1);
+    cursor: pointer;
   }
 }
 </style>

@@ -1,6 +1,7 @@
 body {
   font-family: sans-serif;
 }
+
 body a {
   text-decoration: none;
 }
@@ -9,5 +10,4 @@ body a {
   padding-left: calc(50% - 700px);
   padding-right: calc(50% - 700px);
 }
-
 /*# sourceMappingURL=style.css.map */

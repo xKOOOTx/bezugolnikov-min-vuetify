@@ -2,34 +2,34 @@
   <nav class="nav">
     <v-toolbar class="blue-grey darken-4 justify-space-around text-center">
       <v-row class="align-center">
-        <v-col class="col-2">
-          <v-btn depressed large
-                 :to="'/about'"
-                 class="align-center nav__btn blue-grey darken-4">
-            <span class="nav__btn_span pr-3">About</span>
-            <v-icon class="nav__btn_icon">perm_identity</v-icon>
-          </v-btn>
-        </v-col>
-        <v-spacer></v-spacer>
-        <v-col class="col-8">
-          <v-toolbar-title>
-            <router-link
-              to="/"
-              class="nav__link">
-              mikhail bezugolnikov
-            </router-link>
-          </v-toolbar-title>
-        </v-col>
-        <v-spacer></v-spacer>
-        <v-col class="col-2">
-          <v-btn
-            depressed
-            :to="'/contacts'"
-            class="nav__btn blue-grey darken-4">
-            <v-icon class="nav__btn_icon">alternate_email</v-icon>
-            <span class="nav__btn_span pl-3">Contacts</span>
-          </v-btn>
-        </v-col>
+          <v-col class="col-2">
+            <v-btn depressed large
+                   :to="'/about'"
+                   class="align-center nav__btn blue-grey darken-4">
+              <span class="nav__btn_span pr-3">About</span>
+              <v-icon class="nav__btn_icon">perm_identity</v-icon>
+            </v-btn>
+          </v-col>
+          <v-spacer></v-spacer>
+          <v-col class="col-8">
+            <v-toolbar-title>
+              <router-link
+                to="/"
+                class="nav__link">
+                mikhail bezugolnikov
+              </router-link>
+            </v-toolbar-title>
+          </v-col>
+          <v-spacer></v-spacer>
+          <v-col class="col-2">
+            <v-btn
+              depressed
+              :to="'/contacts'"
+              class="nav__btn blue-grey darken-4">
+              <v-icon class="nav__btn_icon">alternate_email</v-icon>
+              <span class="nav__btn_span pl-3">Contacts</span>
+            </v-btn>
+          </v-col>
       </v-row>
     </v-toolbar>
   </nav>
@@ -37,7 +37,16 @@
 
 <script>
 export default {
-  name: 'Nav'
+  name: 'Nav',
+  data: () => ({
+    drawer: false,
+    group: null
+  }),
+  watch: {
+    group () {
+      this.drawer = false
+    }
+  }
 }
 </script>
 
@@ -47,8 +56,8 @@ export default {
 
 .nav {
   &__link {
-    display: block;
-    padding: 1.5rem;
+    display: inline-block;
+    padding: 1rem;
 
     text-transform: uppercase;
 
@@ -60,13 +69,15 @@ export default {
       text-decoration: none!important;
     }
   }
-  &__btn {
+  &__btn,
+  &__btn .nav__btn_icon{
+    transition: .2s color linear;
     &_span {
       color: $white;
       transition: .2s color linear;
     }
     &:hover span,
-    &:hover icon{
+    &:hover .nav__btn_icon{
       color: orangered;
     }
     &_icon {

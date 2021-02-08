@@ -1,12 +1,12 @@
 <template>
   <v-app>
-    <Nav/>
-    <v-main class="blue-grey darken-4">
-      <router-view/>
-    </v-main>
-    <v-footer class="blue-grey darken-4 white--text d-flex justify-start pl-16">
-      <p class="footer_p pl-2">2021&copy; Gusev Alex</p>
-    </v-footer>
+      <Nav/>
+      <v-main class="blue-grey darken-4">
+        <router-view/>
+      </v-main>
+      <v-footer class="blue-grey darken-4 white--text d-flex justify-start pl-16">
+        <p class="footer_p pl-2">2021&copy; Gusev Alex</p>
+      </v-footer>
   </v-app>
 </template>
 
