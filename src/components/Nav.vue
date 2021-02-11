@@ -1,37 +1,29 @@
 <template>
   <nav class="nav">
-    <v-toolbar class="blue-grey darken-4 justify-space-around text-center">
-      <v-row class="align-center">
-          <v-col class="col-2">
-            <v-btn depressed large
-                   :to="'/about'"
-                   class="align-center nav__btn blue-grey darken-4">
-              <span class="nav__btn_span pr-3">About</span>
-              <v-icon class="nav__btn_icon">perm_identity</v-icon>
-            </v-btn>
-          </v-col>
-          <v-spacer></v-spacer>
-          <v-col class="col-8">
-            <v-toolbar-title>
-              <router-link
-                to="/"
-                class="nav__link">
-                mikhail bezugolnikov
-              </router-link>
-            </v-toolbar-title>
-          </v-col>
-          <v-spacer></v-spacer>
-          <v-col class="col-2">
-            <v-btn
-              depressed
-              :to="'/contacts'"
-              class="nav__btn blue-grey darken-4">
-              <v-icon class="nav__btn_icon">alternate_email</v-icon>
-              <span class="nav__btn_span pl-3">Contacts</span>
-            </v-btn>
-          </v-col>
-      </v-row>
-    </v-toolbar>
+    <div class="header">
+      <div class="nav__link_left">
+        <router-link
+          to="/"
+          class="nav__link_left-logo">
+          mikhail <span>bezugolnikov</span>
+        </router-link>
+      </div>
+      <v-spacer />
+      <div class="nav__link_right">
+        <router-link
+          to="/contacts"
+        >
+          <span>Contacts</span>
+          <v-icon class="nav__btn_icon white--text">alternate_email</v-icon>
+        </router-link>
+        <router-link
+          to="/contacts"
+        >
+          <span>Contacts</span>
+          <v-icon class="nav__btn_icon white--text">perm_identity</v-icon>
+        </router-link>
+      </div>
+    </div>
   </nav>
 </template>
 
@@ -54,19 +46,42 @@ export default {
 @import "src/assets/style/style";
 @import "src/assets/style/variables";
 
+.header {
+  background-color: $background!important;
+  border-bottom: 2px solid $font-hover!important;
+  box-shadow: 0 14px 7px -10px rgba($font-hover, 0.22)!important;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
 .nav {
   &__link {
-    display: inline-block;
-    padding: 1rem;
+    &_left {
+      &-logo {
+        display: inline-block;
+        padding: .3rem;
 
-    text-transform: uppercase;
+        text-transform: uppercase;
 
-    color: $white;
-    transition: .2s color linear;
-
-    &:hover {
-      color: orangered;
-      text-decoration: none!important;
+        font-size: 1.5rem;
+        font-weight: 300;
+        color: lighten($font-color, 10%);
+        transition: .2s color linear;
+        flex: 1;
+        &:hover {
+          color: $font-hover;
+          text-decoration: none !important;
+        }
+        & span {
+          font-weight: bold;
+        }
+      }
+    }
+    &_right {
+      justify-content: end;
+      text-align: left;
+      flex: .5;
     }
   }
   &__btn,
@@ -78,10 +93,12 @@ export default {
     }
     &:hover span,
     &:hover .nav__btn_icon{
-      color: orangered;
+      color: $font-hover!important;
     }
-    &_icon {
-      color: $white;
+    &__btn {
+      &_icon {
+        color: $white;
+      }
     }
   }
 }

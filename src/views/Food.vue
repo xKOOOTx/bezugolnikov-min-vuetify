@@ -71,7 +71,13 @@ export default {
         require('../assets/images/food_img/food15.jpg'),
         require('../assets/images/food_img/food16.jpg'),
         require('../assets/images/food_img/food17.jpg'),
-        require('../assets/images/food_img/food18.jpg')
+        require('../assets/images/food_img/food18.jpg'),
+        require('../assets/images/2k/arthur-rachbauer-vYyHLDPKWd4-unsplash.jpg'),
+        require('../assets/images/2k/cosmic-timetraveler-BzqaeA-hkkc-unsplash.jpg'),
+        require('../assets/images/2k/jonathan-bean-sbZU1j31ggE-unsplash.jpg'),
+        require('../assets/images/2k/mar-bustos-ARVFsI-32Uk-unsplash.jpg'),
+        require('../assets/images/2k/mar-bustos-HsEz1XZ1TO8-unsplash.jpg'),
+        require('../assets/images/2k/mika-luoma-jc0rtJtBC1k-unsplash.jpg')
       ],
       index: null
     }

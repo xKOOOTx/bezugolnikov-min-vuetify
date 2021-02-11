@@ -63,7 +63,20 @@ export default {
         require('../assets/images/event_img/event7.jpg'),
         require('../assets/images/event_img/event8.jpg'),
         require('../assets/images/event_img/event9.jpg'),
-        require('../assets/images/event_img/event10.jpg')
+        require('../assets/images/event_img/event10.jpg'),
+        require('../assets/images/4k/pexels-chevanon-photography-325044.jpg'),
+        require('../assets/images/4k/pexels-cátia-matos-1072179.jpg'),
+        require('../assets/images/4k/pexels-eberhard-grossgasteiger-1287145.jpg'),
+        require('../assets/images/4k/pexels-eberhard-grossgasteiger-1367192.jpg'),
+        require('../assets/images/4k/pexels-faaiq-ackmerd-1025469.jpg'),
+        require('../assets/images/4k/pexels-francesco-ungaro-2835436.jpg'),
+        require('../assets/images/4k/pexels-frank-cone-2258536.jpg'),
+        require('../assets/images/4k/pexels-giorgio-de-angelis-1413412.jpg'),
+        require('../assets/images/4k/pexels-irina-iriser-1366957.jpg'),
+        require('../assets/images/4k/pexels-jeremy-bishop-6212576.jpg'),
+        require('../assets/images/4k/pexels-mohamed-almari-1485894.jpg'),
+        require('../assets/images/4k/pexels-pixabay-36717.jpg'),
+        require('../assets/images/4k/pexels-vlad-alexandru-popa-1402787.jpg')
       ],
       index: null
     }
