@@ -53,44 +53,44 @@ export default {
         require('../assets/images/index/studio.jpg'),
         require('../assets/images/index/wedding.jpg')
       ],
-       imagesIndex: [
-         {
-           name: 'club',
-           alt: 'club_photo',
-           path: require('../assets/images/index/club.jpg'),
-           route: '/club'
-         },
-         {
-           name: 'event',
-           alt: 'event_photo',
-           path: require('../assets/images/index/event.jpg'),
-           route: '/event'
-         },
-         {
-           name: 'food',
-           alt: 'food_photo',
-           path: require('../assets/images/index/food.jpg'),
-           route: '/food'
-         },
-         {
-           name: 'official',
-           alt: 'official_photo',
-           path: require('../assets/images/index/official.jpg'),
-           route: '/official'
-         },
-         {
-           name: 'studio',
-           alt: 'studio_photo',
-           path: require('../assets/images/index/studio.jpg'),
-           route: '/studio'
-         },
-         {
-           name: 'wedding',
-           alt: 'wedding_photo',
-           path: require('../assets/images/index/wedding.jpg'),
-           route: '/wedding'
-         }
-       ]
+      imagesIndex: [
+        {
+          name: 'club',
+          alt: 'club_photo',
+          path: require('../assets/images/index/club.jpg'),
+          route: '/club'
+        },
+        {
+          name: 'event',
+          alt: 'event_photo',
+          path: require('../assets/images/index/event.jpg'),
+          route: '/event'
+        },
+        {
+          name: 'food',
+          alt: 'food_photo',
+          path: require('../assets/images/index/food.jpg'),
+          route: '/food'
+        },
+        {
+          name: 'official',
+          alt: 'official_photo',
+          path: require('../assets/images/index/official.jpg'),
+          route: '/official'
+        },
+        {
+          name: 'studio',
+          alt: 'studio_photo',
+          path: require('../assets/images/index/studio.jpg'),
+          route: '/studio'
+        },
+        {
+          name: 'wedding',
+          alt: 'wedding_photo',
+          path: require('../assets/images/index/wedding.jpg'),
+          route: '/wedding'
+        }
+      ]
     }
   }
 }
