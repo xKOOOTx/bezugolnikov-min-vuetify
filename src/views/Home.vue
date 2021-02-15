@@ -37,11 +37,9 @@
 </template>
 
 <script>
-import VueImageWall from 'vue-image-wall'
 
 export default {
   name: 'Home',
-  components: { VueImageWall },
   data () {
     return {
       images: [
