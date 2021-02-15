@@ -1,4 +1,4 @@
-\<template>
+<template>
   <v-main>
     <v-container class="">
       <v-row class="h1_wrapper">
@@ -6,10 +6,10 @@
           <h1 class="gallery-header">Enjoy your choice</h1>
         </v-col>
       </v-row>
-      <v-row>-->
-          <div class="imgWrapper">-->
-            <router-link :to="image.route" >-->
-              <v-img-->
+      <v-row>
+        <div class="imgWrapper">
+            <router-link :to="image.route" >
+              <v-img>
                 class="customImg"
                 min-height="250px"
                 :alt="image.alt"
@@ -30,8 +30,7 @@
                   </template>
                 </v-img>
             </router-link>
-          </div>
-        </v-col>
+        </div>
       </v-row>
     </v-container>
   </v-main>
