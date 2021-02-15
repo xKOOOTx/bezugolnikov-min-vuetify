@@ -9,7 +9,7 @@
       <v-row>
         <div class="imgWrapper">
             <router-link :to="image.route" >
-              <v-img>
+              <v-img
                 class="customImg"
                 min-height="250px"
                 :alt="image.alt"
