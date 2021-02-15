@@ -52,7 +52,7 @@ export default {
         require('../assets/images/index/official.jpg'),
         require('../assets/images/index/studio.jpg'),
         require('../assets/images/index/wedding.jpg')
-      ] 
+      ],
        imagesIndex: [
          {
            name: 'club',
