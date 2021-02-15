@@ -9,7 +9,7 @@
       <v-row>
         <div class="imgWrapper"
              v-for="(image, id) in imagesIndex"
-             :key="image.id"
+             :key="id"
              >
             <router-link :to="image.route" >
               <v-img
@@ -45,14 +45,14 @@ export default {
   name: 'Home',
   data () {
     return {
-/*      images: [
+      images: [
         require('../assets/images/index/club.jpg'),
         require('../assets/images/index/event.jpg'),
         require('../assets/images/index/food.jpg'),
         require('../assets/images/index/official.jpg'),
         require('../assets/images/index/studio.jpg'),
         require('../assets/images/index/wedding.jpg')
-      ]*/
+      ] 
        imagesIndex: [
          {
            name: 'club',
