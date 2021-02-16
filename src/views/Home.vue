@@ -7,33 +7,35 @@
         </v-col>
       </v-row>
       <v-row>
-        <div class="imgWrapper"
-             v-for="(image, id) in imagesIndex"
-             :key="id"
-             >
+        <v-col
+          v-for="(image, id) in imagesIndex"
+          :key="id"
+          cols="4"
+        >
+          <div class="imgWrapper">
             <router-link :to="image.route" >
               <v-img
-                class="customImg"
-                min-height="250px"
+                class="customImg col-3"
+                min-height="260px"
                 :alt="image.alt"
                 :src="image.path"
-                aspect-ratio="2"
-                >
-                  <template v-slot:placeholder>
-                    <v-row
-                      class="fill-height ma-0"
-                      align="center"
-                      justify="center"
-                    >
-                      <v-progress-circular
-                        indeterminate
-                        color="grey lighten-5"
-                      ></v-progress-circular>
-                    </v-row>
-                  </template>
-                </v-img>
+              >
+                <template v-slot:placeholder>
+                  <v-row
+                    class="fill-height ma-0"
+                    align="center"
+                    justify="center"
+                  >
+                    <v-progress-circular
+                      indeterminate
+                      color="grey lighten-5"
+                    ></v-progress-circular>
+                  </v-row>
+                </template>
+              </v-img>
             </router-link>
-        </div>
+          </div>
+        </v-col>
       </v-row>
     </v-container>
   </v-main>
