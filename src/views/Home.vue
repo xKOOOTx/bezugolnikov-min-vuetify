@@ -20,6 +20,7 @@
                 :alt="image.alt"
                 :src="image.path"
               >
+
                 <template v-slot:placeholder>
                   <v-row
                     class="fill-height ma-0"
@@ -94,6 +95,11 @@ export default {
         }
       ]
     }
+  },
+  methods: {
+    displayBlock() {
+
+    }
   }
 }
 </script>
@@ -117,10 +123,32 @@ export default {
   overflow: hidden;
 }
 .customImg {
-  transition: all .3s ease-in;
+  position: relative;
+  transition: all .3s linear;
+  filter: blur(.8px);
+
   &:hover {
     transform: scale(1.1);
     transition-duration: .3s;
+    filter: none;
   }
+}
+.img__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  width: 100%;
+  height: 100%;
+  color: $black;
+  justify-content: center;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.active {
+  display: flex;
 }
 </style>
