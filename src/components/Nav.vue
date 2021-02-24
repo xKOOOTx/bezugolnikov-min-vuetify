@@ -12,12 +12,14 @@
       <div class="nav__link_right">
         <router-link
           to="/contacts"
+          class="nav__buttons"
         >
           <span>Contacts</span>
           <v-icon class="nav__btn_icon white--text">alternate_email</v-icon>
         </router-link>
         <router-link
-          to="/contacts"
+          to="/about"
+          class="nav__buttons"
         >
           <span>Contacts</span>
           <v-icon class="nav__btn_icon white--text">perm_identity</v-icon>
@@ -91,14 +93,37 @@ export default {
       color: $white;
       transition: .2s color linear;
     }
-    &:hover span,
-    &:hover .nav__btn_icon{
-      color: $font-hover!important;
-    }
     &__btn {
       &_icon {
         color: $white;
       }
+    }
+  }
+  &__btn {
+    &_icon {
+      font-size: 1.2rem!important;
+    }
+  }
+
+  &__buttons {
+    margin: 5px;
+    padding: .5rem 1rem;
+    border: 1px solid $white;
+    border-radius: 5px;
+
+    color: $white;
+    font-size: .8rem;
+
+    transition: color .2s linear, border-color .2s linear;
+
+    & span {
+      padding-right: 10px;
+    }
+
+    &:hover,
+    &:hover .nav__btn_icon{
+      color: $font-hover!important;
+      border-color: $font-hover;
     }
   }
 }

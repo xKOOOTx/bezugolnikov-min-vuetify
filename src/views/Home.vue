@@ -3,7 +3,7 @@
     <v-container class="">
       <v-row class="h1_wrapper">
         <v-col class="col-12">
-          <h1 class="gallery-header">Enjoy your choice</h1>
+          <h1 class="gallery-header">Freezing time...</h1>
         </v-col>
       </v-row>
       <v-row>
@@ -97,7 +97,7 @@ export default {
     }
   },
   methods: {
-    displayBlock() {
+    displayBlock () {
 
     }
   }
@@ -108,7 +108,7 @@ export default {
   @import '../assets/style/variables';
 
 .gallery-header {
-  font-family: 'Dancing Script', cursive;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 3rem;
   font-weight: 300;
   color: lighten($font-color, 10%);
