@@ -8,6 +8,9 @@
           mikhail <span>bezugolnikov</span>
         </router-link>
       </div>
+      <div class="center">
+        <span class="strip"></span>
+      </div>
       <div class="nav__link_right">
         <router-link
           to="/contacts"
