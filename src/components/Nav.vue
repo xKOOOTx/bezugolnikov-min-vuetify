@@ -8,7 +8,6 @@
           mikhail <span>bezugolnikov</span>
         </router-link>
       </div>
-      <v-spacer />
       <div class="nav__link_right">
         <router-link
           to="/contacts"
@@ -54,10 +53,12 @@ export default {
   box-shadow: 0 14px 7px -10px rgba($font-hover, 0.22)!important;
 
   display: flex;
-  justify-content: space-around;
+  padding: 0 1rem;
+  justify-content: space-between;
   align-items: center;
 }
 .nav {
+
   &__link {
     &_left {
       &-logo {
@@ -70,7 +71,6 @@ export default {
         font-weight: 300;
         color: lighten($font-color, 10%);
         transition: .2s color linear;
-        flex: 1;
         &:hover {
           color: $font-hover;
           text-decoration: none !important;
@@ -83,7 +83,6 @@ export default {
     &_right {
       justify-content: end;
       text-align: left;
-      flex: .5;
     }
   }
   &__btn,
@@ -126,8 +125,5 @@ export default {
       border-color: $font-hover;
     }
   }
-}
-.btn {
-
 }
 </style>

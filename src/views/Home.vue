@@ -3,7 +3,7 @@
     <v-container class="">
       <v-row class="h1_wrapper">
         <v-col class="col-12">
-          <h1 class="gallery-header">Freezing time...</h1>
+          <h1 class="gallery-header">Freezing moment...</h1>
         </v-col>
       </v-row>
       <v-row>
@@ -11,6 +11,7 @@
           v-for="(image, id) in imagesIndex"
           :key="id"
           cols="4"
+          class="col-lg-3 col-md-4 col-sm-5 col-12"
         >
           <div class="imgWrapper">
             <router-link :to="image.route" >
@@ -150,5 +151,9 @@ export default {
 
 .active {
   display: flex;
+}
+
+.row {
+  justify-content: center;
 }
 </style>
