@@ -1,10 +1,10 @@
 <template>
-  <Nav />
+
 </template>
 
 <script>
 export default {
-  name: 'Sponsors'
+  name: 'Clients'
 }
 </script>
 
