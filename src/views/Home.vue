@@ -1,6 +1,6 @@
 <template>
   <v-main>
-    <v-container class="">
+    <v-container class="center">
       <v-row class="h1_wrapper">
         <v-col class="col-12">
           <h1 class="gallery-header">Freezing moment...</h1>
@@ -14,14 +14,23 @@
           class="col-xl-3 col-lg-4 col-md-4 col-sm-5 col-12"
         >
           <div class="imgWrapper">
-            <router-link :to="image.route" >
+            <v-hover v-slot="{ hover }">
+              <router-link :to="image.route" >
               <v-img
                 class="customImg col-3"
                 min-height="260px"
                 :alt="image.alt"
                 :src="image.path"
               >
-
+                <v-expand-transition>
+                  <div
+                    v-if="hover"
+                    class="d-flex transition-fast-out-linear-in v-card--reveal display-3"
+                    style="height: 100%;"
+                  >
+                    {{ image.name }}
+                  </div>
+                </v-expand-transition>
                 <template v-slot:placeholder>
                   <v-row
                     class="fill-height ma-0"
@@ -36,6 +45,7 @@
                 </template>
               </v-img>
             </router-link>
+            </v-hover>
           </div>
         </v-col>
       </v-row>
@@ -49,14 +59,6 @@ export default {
   name: 'Home',
   data () {
     return {
-      images: [
-        require('../assets/images/index/club.jpg'),
-        require('../assets/images/index/event.jpg'),
-        require('../assets/images/index/food.jpg'),
-        require('../assets/images/index/official.jpg'),
-        require('../assets/images/index/studio.jpg'),
-        require('../assets/images/index/wedding.jpg')
-      ],
       imagesIndex: [
         {
           name: 'club',
@@ -112,9 +114,7 @@ export default {
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 3rem;
   font-weight: 300;
-  color: lighten($font-color, 10%);
-
-  padding-top: 1rem;
+  color: $nav-font-color;
 }
 .h1_wrapper {
   text-align: center;
@@ -125,28 +125,6 @@ export default {
 }
 .customImg {
   position: relative;
-  transition: all .3s linear;
-  filter: blur(.8px);
-
-  &:hover {
-    transform: scale(1.1);
-    transition-duration: .3s;
-    filter: none;
-  }
-}
-.img__content {
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: none;
-  width: 100%;
-  height: 100%;
-  color: $black;
-  justify-content: center;
-  align-items: center;
-  font-family: "Roboto", sans-serif;
-  font-size: 1.4rem;
-  text-align: center;
 }
 
 .active {
@@ -155,5 +133,18 @@ export default {
 
 .row {
   justify-content: center;
+}
+
+.v-card--reveal {
+  align-items: center;
+  bottom: 0;
+  left: 0;
+  justify-content: center;
+  opacity: .7;
+  position: absolute;
+  width: 100%;
+  background: $font-hover;
+  color: $font-color;
+  text-transform: capitalize;
 }
 </style>

@@ -9,8 +9,7 @@ body a {
 }
 
 .center {
-  padding-left: calc(50% - 700px);
-  padding-right: calc(50% - 700px);
+  padding: 0.5rem 10.5rem;
 }
 
 /*# sourceMappingURL=style.css.map */

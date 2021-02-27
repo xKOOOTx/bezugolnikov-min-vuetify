@@ -1,6 +1,6 @@
 <template>
   <nav class="nav">
-    <div class="header">
+    <div class="header center">
       <div class="nav__link_left">
         <router-link
           to="/"
@@ -12,20 +12,22 @@
         <span class="strip"></span>
       </div>
       <div class="nav__link_right">
-        <router-link
-          to="/contacts"
-          class="nav__buttons"
-        >
-          <span>Contacts</span>
-          <v-icon class="nav__btn_icon white--text">alternate_email</v-icon>
-        </router-link>
-        <router-link
-          to="/about"
-          class="nav__buttons"
-        >
-          <span>Contacts</span>
-          <v-icon class="nav__btn_icon white--text">perm_identity</v-icon>
-        </router-link>
+        <v-tab>
+          <router-link
+            to="/contacts"
+            class="nav__buttons"
+          >
+            <span>Contacts</span>
+          </router-link>
+        </v-tab>
+        <v-tab>
+          <router-link
+            to="/about"
+            class="nav__buttons"
+          >
+            <span>About</span>
+          </router-link>
+        </v-tab>
       </div>
     </div>
   </nav>
@@ -56,7 +58,6 @@ export default {
   box-shadow: 0 14px 7px -10px rgba($font-hover, 0.22)!important;
 
   display: flex;
-  padding: 0 1rem;
   justify-content: space-between;
   align-items: center;
 }
@@ -72,7 +73,7 @@ export default {
 
         font-size: 1.5rem;
         font-weight: 300;
-        color: lighten($font-color, 10%);
+        color: $font-color;
         transition: .2s color linear;
         &:hover {
           color: $font-hover;
@@ -84,6 +85,7 @@ export default {
       }
     }
     &_right {
+      display: flex;
       justify-content: end;
       text-align: left;
     }
@@ -92,7 +94,7 @@ export default {
   &__btn .nav__btn_icon{
     transition: .2s color linear;
     &_span {
-      color: $white;
+      color: $font-color;
       transition: .2s color linear;
     }
     &__btn {
@@ -110,17 +112,11 @@ export default {
   &__buttons {
     margin: 5px;
     padding: .5rem 1rem;
-    border: 1px solid $white;
-    border-radius: 5px;
 
-    color: $white;
+    color: $nav-font-color;
     font-size: .8rem;
 
     transition: color .2s linear, border-color .2s linear;
-
-    & span {
-      padding-right: 10px;
-    }
 
     &:hover,
     &:hover .nav__btn_icon{

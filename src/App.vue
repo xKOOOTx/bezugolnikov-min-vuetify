@@ -4,8 +4,8 @@
       <v-main class="main-body">
         <router-view/>
       </v-main>
-      <v-footer class="footer white--text d-flex justify-start pl-16">
-        <p class="footer_p pl-2">2021&copy; Gusev Alex</p>
+      <v-footer class="footer d-flex justify-start center">
+        <p class="footer_p center">2021&copy; Gusev Alex</p>
       </v-footer>
   </v-app>
 </template>
@@ -47,11 +47,11 @@ export default {
 .footer {
   border-top: 2px solid $font-hover!important;
   background-color: $background!important;
-  box-shadow: 0 14px 30px -15px rgba($font-hover, 0.22) inset!important;
 }
 
 .footer_p {
   font-size: .6rem;
+  color: $nav-font-color;
 }
 
 </style>
