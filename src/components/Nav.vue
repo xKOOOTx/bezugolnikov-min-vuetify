@@ -28,6 +28,14 @@
             <span>About</span>
           </router-link>
         </v-tab>
+        <v-tab>
+          <router-link
+            to="/clients"
+            class="nav__buttons"
+          >
+            <span>Clients</span>
+          </router-link>
+        </v-tab>
       </div>
     </div>
   </nav>
