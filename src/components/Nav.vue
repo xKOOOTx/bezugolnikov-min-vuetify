@@ -8,57 +8,49 @@
           mikhail <span>bezugolnikov</span>
         </router-link>
       </div>
-      <div class="center">
-        <span class="strip"></span>
-      </div>
       <div class="nav__link_right">
-        <v-tab>
-          <router-link
-            to="/contacts"
-            class="nav__buttons"
-          >
-            <span>Contacts</span>
-          </router-link>
-        </v-tab>
-        <v-tab>
-          <router-link
-            to="/about"
-            class="nav__buttons"
-          >
-            <span>About</span>
-          </router-link>
-        </v-tab>
-        <v-tab>
-          <router-link
-            to="/clients"
-            class="nav__buttons"
-          >
-            <span>Clients</span>
-          </router-link>
-        </v-tab>
+          <v-tab>
+            <router-link
+              to="/contacts"
+              class="nav__buttons"
+            >
+              <span>Contacts</span>
+            </router-link>
+          </v-tab>
+          <v-tab>
+            <router-link
+              to="/about"
+              class="nav__buttons"
+            >
+              <span>About</span>
+            </router-link>
+          </v-tab>
+          <v-tab>
+            <router-link
+              to="/clients"
+              class="nav__buttons"
+            >
+              <span>Clients</span>
+            </router-link>
+          </v-tab>
       </div>
+      <button class="burger" type="button" id="sidebarToggle">
+        <span>Открыть навигацию</span>
+      </button>
     </div>
   </nav>
 </template>
 
 <script>
 export default {
-  name: 'Nav',
-  data: () => ({
-    drawer: false,
-    group: null
-  }),
-  watch: {
-    group () {
-      this.drawer = false
-    }
-  }
+  name: 'Nav'
 }
 </script>
 
 <style lang="scss" scoped>
 @import "src/assets/style/style";
 @import "src/assets/style/variables";
+@import "src/assets/style/mixins";
 
 .header {
   background-color: $background!important;
@@ -73,6 +65,9 @@ export default {
 
   &__link {
     &_left {
+      @include breakpoint($mobile-bp) {
+        max-width: 250px;
+      }
       &-logo {
         display: inline-block;
         padding: .3rem;
@@ -96,6 +91,17 @@ export default {
       display: flex;
       justify-content: end;
       text-align: left;
+
+      @include breakpoint($mobile-bp) {
+        display: none;
+      }
+    }
+    &_burger {
+      display: none;
+
+      @include breakpoint($mobile-bp) {
+        display: flex;
+      }
     }
   }
   &__btn,
@@ -131,6 +137,72 @@ export default {
       color: $font-hover!important;
       border-color: $font-hover;
     }
+  }
+}
+.burger {
+  display: none;
+  width: 3rem;
+  height: 2rem;
+  background: none;
+  border: none;
+  padding: 0;
+
+  font-size: 0;
+  color: transparent;
+
+  position: absolute;
+  top: 50px;
+  right: 20px;
+
+  transform: translateY(-50%);
+
+  &:before,
+  &:after,
+  & span {
+    display: block;
+    width: 100%;
+    height: 2px;
+
+    background-color: $nav-font-color;
+
+    position: absolute;
+    left: 0;
+  }
+  &:before,
+  &:after {
+    content: '';
+    transition: transform .2s linear;
+  }
+  &:before {
+    top: 0;
+  }
+  &:after {
+    bottom: 0;
+  }
+  & span {
+    top: 50%;
+    transform: translateY(-50%);
+    transition: opacity .2s linear;
+  }
+
+  .show-sidebar & {
+    & span {
+      opacity: 0;
+    }
+    &:before,
+    &:after {
+      top: 50%;
+    }
+    &:before {
+      transform: rotate(45deg);
+    }
+    &:after {
+      transform: rotate(-45deg);
+    }
+  }
+
+  @include breakpoint($mobile-bp){
+    display: block;
   }
 }
 </style>

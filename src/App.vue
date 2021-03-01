@@ -33,16 +33,6 @@ export default {
 .main-body {
   background-color: $background;
 }
-.link {
-  outline: 1px solid $white;
-  border-radius: 3px;
-
-  padding: 20px;
-
-  &:hover {
-    color: $font-hover;
-  }
-}
 
 .footer {
   border-top: 2px solid $font-hover!important;

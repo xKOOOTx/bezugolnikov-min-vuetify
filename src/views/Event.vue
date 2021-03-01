@@ -64,7 +64,6 @@ export default {
         require('../assets/images/event_img/event8.jpg'),
         require('../assets/images/event_img/event9.jpg'),
         require('../assets/images/event_img/event10.jpg'),
-        require('../assets/images/4k/pexels-chevanon-photography-325044.jpg'),
         require('../assets/images/4k/pexels-cátia-matos-1072179.jpg'),
         require('../assets/images/4k/pexels-eberhard-grossgasteiger-1287145.jpg'),
         require('../assets/images/4k/pexels-eberhard-grossgasteiger-1367192.jpg'),

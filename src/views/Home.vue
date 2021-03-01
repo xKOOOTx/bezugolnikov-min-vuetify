@@ -98,11 +98,6 @@ export default {
         }
       ]
     }
-  },
-  methods: {
-    displayBlock () {
-
-    }
   }
 }
 </script>
@@ -125,10 +120,6 @@ export default {
 }
 .customImg {
   position: relative;
-}
-
-.active {
-  display: flex;
 }
 
 .row {
