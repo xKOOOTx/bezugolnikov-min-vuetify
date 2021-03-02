@@ -3,7 +3,7 @@
     <v-container class="center">
       <v-row class="h1_wrapper">
         <v-col class="col-12">
-          <h1 class="gallery-header">Freezing moment...</h1>
+          <h1 class="gallery-header">Gallery</h1>
         </v-col>
       </v-row>
       <v-row>

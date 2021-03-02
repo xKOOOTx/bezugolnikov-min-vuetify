@@ -34,7 +34,11 @@
             </router-link>
           </v-tab>
       </div>
-      <button class="burger" type="button" id="sidebarToggle">
+      <button
+        class="burger"
+        type="button"
+        id="sidebarToggle"
+      >
         <span>Открыть навигацию</span>
       </button>
     </div>
@@ -51,6 +55,7 @@ export default {
 @import "src/assets/style/style";
 @import "src/assets/style/variables";
 @import "src/assets/style/mixins";
+@import "src/assets/style/burger";
 
 .header {
   background-color: $background!important;
@@ -66,7 +71,8 @@ export default {
   &__link {
     &_left {
       @include breakpoint($mobile-bp) {
-        max-width: 250px;
+        max-width: 15rem;
+        padding-left: 2rem;
       }
       &-logo {
         display: inline-block;
@@ -104,24 +110,6 @@ export default {
       }
     }
   }
-  &__btn,
-  &__btn .nav__btn_icon{
-    transition: .2s color linear;
-    &_span {
-      color: $font-color;
-      transition: .2s color linear;
-    }
-    &__btn {
-      &_icon {
-        color: $white;
-      }
-    }
-  }
-  &__btn {
-    &_icon {
-      font-size: 1.2rem!important;
-    }
-  }
 
   &__buttons {
     margin: 5px;
@@ -132,77 +120,39 @@ export default {
 
     transition: color .2s linear, border-color .2s linear;
 
-    &:hover,
-    &:hover .nav__btn_icon{
+    &:hover {
       color: $font-hover!important;
       border-color: $font-hover;
     }
   }
 }
-.burger {
-  display: none;
-  width: 3rem;
-  height: 2rem;
-  background: none;
-  border: none;
-  padding: 0;
-
-  font-size: 0;
-  color: transparent;
-
-  position: absolute;
-  top: 50px;
-  right: 20px;
-
-  transform: translateY(-50%);
-
-  &:before,
-  &:after,
-  & span {
-    display: block;
-    width: 100%;
-    height: 2px;
-
-    background-color: $nav-font-color;
-
-    position: absolute;
-    left: 0;
-  }
-  &:before,
-  &:after {
-    content: '';
-    transition: transform .2s linear;
-  }
-  &:before {
-    top: 0;
-  }
-  &:after {
-    bottom: 0;
-  }
-  & span {
-    top: 50%;
-    transform: translateY(-50%);
-    transition: opacity .2s linear;
-  }
-
-  .show-sidebar & {
-    & span {
-      opacity: 0;
-    }
-    &:before,
-    &:after {
-      top: 50%;
-    }
-    &:before {
-      transform: rotate(45deg);
-    }
-    &:after {
-      transform: rotate(-45deg);
-    }
-  }
-
-  @include breakpoint($mobile-bp){
-    display: block;
-  }
-}
+//.sidebar {
+//  position: absolute;
+//  //display: none;
+//  overflow-y: hidden;
+//  top: 4.9%;
+//  right: 0;
+//  height: 83vh;
+//  z-index: 55;
+//  background-color: $white;
+//  width: 100%;
+//
+//  &__link {
+//    margin-top: 50px;
+//
+//    &_buttons {
+//      margin: 5px;
+//      padding: 3rem 1rem;
+//
+//      color: $nav-font-color;
+//      font-size: .8rem;
+//    }
+//      &_right {
+//        margin-top: 10%;
+//        & span {
+//          font-size: 1.2rem;
+//        }
+//    }
+//  }
+//}
 </style>
