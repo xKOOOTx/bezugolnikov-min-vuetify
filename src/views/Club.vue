@@ -42,8 +42,8 @@
 </template>
 
 <script>
-import Vue from 'vue'
 import CoolLightBox from 'vue-cool-lightbox'
+import Vue from 'vue'
 import VueMasonry from 'vue-masonry-css'
 import 'vue-cool-lightbox/dist/vue-cool-lightbox.min.css'
 Vue.use(VueMasonry)

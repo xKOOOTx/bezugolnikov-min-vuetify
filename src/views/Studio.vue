@@ -39,8 +39,8 @@
 </template>
 
 <script>
-import Vue from 'vue'
 import CoolLightBox from 'vue-cool-lightbox'
+import Vue from 'vue'
 import VueMasonry from 'vue-masonry-css'
 import 'vue-cool-lightbox/dist/vue-cool-lightbox.min.css'
 Vue.use(VueMasonry)
@@ -53,63 +53,6 @@ export default {
   },
   data () {
     return {
-      // imagesStudio: [
-      //   {
-      //     name: 'actorName',
-      //     alt: 'studio_name_photo',
-      //     path: require('../assets/images/studio_img/studio1.jpg')
-      //   },
-      //   {
-      //     name: 'actorName',
-      //     alt: 'studio_name_photo',
-      //     path: require('../assets/images/studio_img/studio2.jpg')
-      //   },
-      //   {
-      //     name: 'actorName',
-      //     alt: 'studio_name_photo',
-      //     path: require('../assets/images/studio_img/studio3.jpg')
-      //   },
-      //   {
-      //     name: 'actorName',
-      //     alt: 'studio_name_photo',
-      //     path: require('../assets/images/studio_img/studio4.jpg')
-      //   },
-      //   {
-      //     name: 'actorName',
-      //     alt: 'studio_name_photo',
-      //     path: require('../assets/images/studio_img/studio5.jpg')
-      //   },
-      //   {
-      //     name: 'actorName',
-      //     alt: 'studio_name_photo',
-      //     path: require('../assets/images/studio_img/studio6.jpg')
-      //   },
-      //   {
-      //     name: 'actorName',
-      //     alt: 'studio_name_photo',
-      //     path: require('../assets/images/studio_img/studio7.jpg')
-      //   },
-      //   {
-      //     name: 'actorName',
-      //     alt: 'studio_name_photo',
-      //     path: require('../assets/images/studio_img/studio8.jpg')
-      //   },
-      //   {
-      //     name: 'actorName',
-      //     alt: 'studio_name_photo',
-      //     path: require('../assets/images/studio_img/studio9.jpg')
-      //   },
-      //   {
-      //     name: 'actorName',
-      //     alt: 'studio_name_photo',
-      //     path: require('../assets/images/studio_img/studio10.jpg')
-      //   },
-      //   {
-      //     name: 'actorName',
-      //     alt: 'studio_name_photo',
-      //     path: require('../assets/images/studio_img/studio11.jpg')
-      //   }
-      // ],
       imagesStudio: [
         require('../assets/images/studio_img/studio1.jpg'),
         require('../assets/images/studio_img/studio2.jpg'),

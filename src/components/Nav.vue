@@ -34,13 +34,6 @@
             </router-link>
           </v-tab>
       </div>
-      <button
-        class="burger"
-        type="button"
-        id="sidebarToggle"
-      >
-        <span>Открыть навигацию</span>
-      </button>
     </div>
   </nav>
 </template>
@@ -52,10 +45,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "src/assets/style/mixins";
 @import "src/assets/style/style";
 @import "src/assets/style/variables";
-@import "src/assets/style/mixins";
-@import "src/assets/style/burger";
 
 .header {
   background-color: $background!important;
@@ -126,33 +118,4 @@ export default {
     }
   }
 }
-//.sidebar {
-//  position: absolute;
-//  //display: none;
-//  overflow-y: hidden;
-//  top: 4.9%;
-//  right: 0;
-//  height: 83vh;
-//  z-index: 55;
-//  background-color: $white;
-//  width: 100%;
-//
-//  &__link {
-//    margin-top: 50px;
-//
-//    &_buttons {
-//      margin: 5px;
-//      padding: 3rem 1rem;
-//
-//      color: $nav-font-color;
-//      font-size: .8rem;
-//    }
-//      &_right {
-//        margin-top: 10%;
-//        & span {
-//          font-size: 1.2rem;
-//        }
-//    }
-//  }
-//}
 </style>

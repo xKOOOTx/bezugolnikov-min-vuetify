@@ -118,6 +118,5 @@ export default {
 <style scoped>
 .card__wrapper {
   display: flex;
-
 }
 </style>
