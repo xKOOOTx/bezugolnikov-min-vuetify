@@ -45,7 +45,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "src/assets/style/mixins";
+@import "../assets/style/mixins";
 @import "src/assets/style/style";
 @import "src/assets/style/variables";
 
