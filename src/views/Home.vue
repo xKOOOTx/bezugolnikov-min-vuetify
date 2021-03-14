@@ -10,33 +10,33 @@
         <v-col
           v-for="(image, id) in imagesIndex"
           :key="id"
-          cols="4"
           class="col-xl-3 col-lg-4 col-md-4 col-sm-5 col-12"
         >
           <div class="imgWrapper">
             <v-hover v-slot="{ hover }">
               <router-link :to="image.route" >
-              <v-img
-                class="customImg col-3"
-                min-height="260px"
-                :alt="image.alt"
-                :src="image.path"
-              >
-                <v-expand-transition>
-                  <div
-                    v-if="hover"
-                    class="d-flex transition-fast-out-linear-in v-card--reveal display-3"
-                    style="height: 100%;"
-                  >
-                    {{ image.name }}
-                  </div>
-                </v-expand-transition>
-                <template v-slot:placeholder>
-                  <v-row
-                    class="fill-height ma-0"
-                    align="center"
-                    justify="center"
-                  >
+                <v-img
+                  class="customImg"
+                  min-height="230px"
+                  min-width="auto"
+                  :alt="image.alt"
+                  :src="image.path"
+                >
+                  <v-expand-transition>
+                    <div
+                      v-if="hover"
+                      class="d-flex transition-fast-out-linear-in v-card--reveal display-3"
+                      style="height: 100%; width: 100%;"
+                    >
+                      {{ image.name }}
+                    </div>
+                  </v-expand-transition>
+                  <template v-slot:placeholder>
+                    <v-row
+                      class="fill-height ma-0"
+                      align="center"
+                      justify="center"
+                    >
                     <v-progress-circular
                       indeterminate
                       color="grey lighten-5"

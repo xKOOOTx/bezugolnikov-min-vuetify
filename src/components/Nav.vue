@@ -9,38 +9,92 @@
         </router-link>
       </div>
       <div class="nav__link_right">
-          <v-tab>
-            <router-link
-              to="/contacts"
-              class="nav__buttons"
+        <v-tabs
+          slider-color="#d7ba7e"
+          v-for="(route, idx) in routes"
+          :key="idx"
+          hide-slider
+          fixed-tabs
+          height="35px"
+          class="align-center nav__tabs"
+          background-color="#1b1b1b"
+        >
+          <router-link
+            class="align-self-center"
+            :to= route.path
+            :class= route.class
+          >
+            <span>{{ route.name }}</span>
+          </router-link>
+        </v-tabs>
+        <v-app-bar
+          color="#1b1b1b"
+          dark
+          max-height="20px"
+          max-width="20px"
+          flat
+          class="burger align-center justify-center"
+        >
+          <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+        </v-app-bar>
+        <v-navigation-drawer
+          v-model="drawer"
+          absolute
+          right
+          color="#1b1b1b"
+        >
+          <v-list
+            nav
+          >
+            <v-list-item-group
+              v-model="group"
+              active-class="deep-purple--text text--accent-4"
+              v-for="(route, idx) in routes"
+              :key="idx"
+              class="burger__menu"
             >
-              <span>Contacts</span>
-            </router-link>
-          </v-tab>
-          <v-tab>
-            <router-link
-              to="/about"
-              class="nav__buttons"
-            >
-              <span>About</span>
-            </router-link>
-          </v-tab>
-          <v-tab>
-            <router-link
-              to="/clients"
-              class="nav__buttons"
-            >
-              <span>Clients</span>
-            </router-link>
-          </v-tab>
+              <router-link
+                :to=route.path
+                :class=route.mobileClass
+              >
+                {{ route.name }}
+              </router-link>
+            </v-list-item-group>
+          </v-list>
+        </v-navigation-drawer>
       </div>
     </div>
   </nav>
 </template>
 
 <script>
+
 export default {
-  name: 'Nav'
+  name: 'Nav',
+  data: () => ({
+    routes: [
+      {
+        name: 'Contacts',
+        path: '/contacts',
+        class: 'nav__buttons',
+        mobileClass: 'nav__buttons-mobile'
+      },
+      {
+        name: 'About',
+        path: '/about',
+        class: 'nav__buttons',
+        mobileClass: 'nav__buttons-mobile'
+      },
+      {
+        name: 'Clients',
+        path: '/clients',
+        class: 'nav__buttons',
+        mobileClass: 'nav__buttons-mobile'
+      }
+    ],
+    drawer: false,
+    group: null
+  })
 }
 </script>
 
@@ -59,12 +113,11 @@ export default {
   align-items: center;
 }
 .nav {
-
   &__link {
     &_left {
       @include breakpoint($mobile-bp) {
         max-width: 15rem;
-        padding-left: 2rem;
+        padding-left: .5rem;
       }
       &-logo {
         display: inline-block;
@@ -83,32 +136,36 @@ export default {
         & span {
           font-weight: bold;
         }
+
+        @include breakpoint($wideTablet-bp) {
+          font-size: 1.2rem;
+        }
+        @include breakpoint($tablet-bp) {
+          font-size: 1rem;
+        }
       }
     }
     &_right {
       display: flex;
       justify-content: end;
+      align-items: center;
       text-align: left;
-
-      @include breakpoint($mobile-bp) {
-        display: none;
-      }
-    }
-    &_burger {
-      display: none;
-
-      @include breakpoint($mobile-bp) {
-        display: flex;
-      }
     }
   }
+  &__tabs {
+    display: flex;
 
+    @include breakpoint($tablet-bp) {
+      display: none;
+    }
+  }
   &__buttons {
     margin: 5px;
     padding: .5rem 1rem;
+    position: relative;
 
     color: $nav-font-color;
-    font-size: .8rem;
+    font-size: 1rem;
 
     transition: color .2s linear, border-color .2s linear;
 
@@ -116,6 +173,40 @@ export default {
       color: $font-hover!important;
       border-color: $font-hover;
     }
+
+    &-mobile {
+      margin: 1rem 0;
+      color: $nav-font-color;
+    }
+  }
+}
+.v-tab {
+  background-color: $background!important;
+  &:before {
+    background-color: $font-hover;
+  }
+  &:hover .nav__buttons {
+    color: $font-hover!important;
+  }
+}
+.v-application .primary--text {
+  color: $font-hover!important;
+  caret-color: red!important;
+}
+.burger {
+  display: none;
+
+  @include breakpoint($tablet-bp) {
+    display: flex;
+  }
+  &__menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 50% 0;
+
+    font-size: 1.6rem;
   }
 }
 </style>

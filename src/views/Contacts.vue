@@ -17,7 +17,7 @@
         mdi-whatsapp
       </v-icon>
     </a>
-    <form class="contacts__form centerForm center d-flex flex-column white--text">
+    <form class="contacts__form centerForm center white--text">
       <input type="text" placeholder="Your name">
       <input type="tel" placeholder="Your phone number">
       <input type="email" placeholder="Your email">
@@ -41,10 +41,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "src/assets/style/style";
+@import "src/assets/style/mixins";
 @import "src/assets/style/variables";
 .contacts {
+  margin-top: 40%;
+
   text-align: center;
   &__form {
+    display: none;
+    //display: flex;
+    flex-direction: column;
     transform: rotate(180deg);
     margin-top: 50px;
 
@@ -52,7 +59,6 @@ export default {
       border: 1px solid orange;
       margin-bottom: 2rem;
       padding: 1rem;
-
     }
 
     & input,
@@ -79,6 +85,10 @@ export default {
 .centerForm {
   padding-left: calc(50% - 300px);
   padding-right: calc(50% - 300px);
+
+  @include breakpoint($mobile-bp) {
+    margin: 0 1rem 4rem;
+  }
 }
 .customBtn {
   transition: .2s all linear;
